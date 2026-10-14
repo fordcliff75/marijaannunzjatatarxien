@@ -4,8 +4,26 @@ let savedTheme;try{savedTheme=localStorage.getItem('tarxien-theme');}catch{}
 applyTheme(savedTheme||'dark');
 themeButton.addEventListener('click',()=>{const theme=document.documentElement.dataset.theme==='light'?'dark':'light';applyTheme(theme);try{localStorage.setItem('tarxien-theme',theme);}catch{}});
 const language=document.querySelector('#site-language'),translate=document.querySelector('#translate-link'),status=document.querySelector('#translation-status');
-const localPreview=['localhost','127.0.0.1'].includes(location.hostname);
-function translationLink(){const target=new URL(location.pathname+location.hash,localPreview?'https://marijaannunzjatatarxien.com':location.origin);translate.href='https://translate.google.com/translate?sl=en&tl='+encodeURIComponent(language.value)+'&u='+encodeURIComponent(target.href);translate.hidden=language.value==='en';status.textContent=language.value==='en'?'':localPreview?'Full-page translation will be available once the website is published.':'Automatic translation opens with Google Translate.';}
-language.addEventListener('change',translationLink);
-translate.addEventListener('click',event=>{if(localPreview){event.preventDefault();status.textContent='This is a local preview. Publish the website first to use full-page Google translation.';}});
-translationLink();
+// Google translates the entire published page, including its linked pages.
+// Keep the language names intact so visitors can always select another language.
+language.closest('.language-tools').classList.add('notranslate');
+language.closest('.language-tools').setAttribute('translate','no');
+const parameters=new URLSearchParams(location.search);
+const translatedPage=location.hostname.endsWith('.translate.goog');
+const activeLanguage=translatedPage?parameters.get('_x_tr_tl')||'en':'en';
+language.value=[...language.options].some(option=>option.value===activeLanguage)?activeLanguage:'en';
+translate.hidden=true;
+status.textContent=translatedPage?'Automatic translation by Google.':'';
+language.addEventListener('change',()=>{
+  const original=new URL(location.pathname+location.hash,'https://www.marijaannunzjatatarxien.com');
+  if(language.value==='en'){
+    if(translatedPage)location.assign(original.href);
+    return;
+  }
+  status.textContent='Translating…';
+  const target=new URL('https://translate.google.com/translate');
+  target.searchParams.set('sl','en');
+  target.searchParams.set('tl',language.value);
+  target.searchParams.set('u',original.href);
+  location.assign(target.href);
+});
