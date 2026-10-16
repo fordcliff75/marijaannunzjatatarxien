@@ -13,7 +13,7 @@ document.querySelectorAll('[alt],[aria-label],[title]').forEach(element=>{if(!el
 let currentDictionary={},request=0,selectedLanguage='en';const dictionaries=new Map();
 function translated(text){const trimmed=text.trim(),value=currentDictionary[trimmed];return value?text.replace(trimmed,value):text;}
 async function changeLanguage(code){const version=++request;status.textContent='';try{
-  let dictionary={};if(code!=='en'){status.textContent='…';if(!dictionaries.has(code))dictionaries.set(code,fetch(''+code+'.json?v=20261014').then(response=>{if(!response.ok)throw Error('Translation unavailable');return response.json();}));dictionary=await dictionaries.get(code);}
+  let dictionary={};if(code!=='en'){status.textContent='…';if(!dictionaries.has(code))dictionaries.set(code,fetch(''+code+'.json?v=20261016-australia').then(response=>{if(!response.ok)throw Error('Translation unavailable');return response.json();}));dictionary=await dictionaries.get(code);}
   if(version!==request)return;currentDictionary=dictionary;selectedLanguage=code;
   originalText.forEach((text,node)=>{node.textContent=translated(text);});
   originalAttributes.forEach(([element,attribute,text])=>element.setAttribute(attribute,translated(text)));
