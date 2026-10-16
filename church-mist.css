@@ -1,0 +1,6 @@
+.annunciation-artwork{position:relative;isolation:isolate;overflow:hidden}
+.annunciation-artwork .church-mist{position:absolute;inset:auto 0 6%;width:100%;height:60%;object-fit:fill;pointer-events:none;mix-blend-mode:screen;opacity:.30;filter:sepia(.8) saturate(.7);mask-image:linear-gradient(to bottom,transparent 0%,#000 35%,#000 75%,transparent 100%);z-index:1}
+.mist-toggle{position:absolute;right:16px;bottom:12px;z-index:2;border:1px solid #d7b45f;border-radius:50%;width:36px;height:36px;padding:8px;color:#f6d684;background:#06172fd9;cursor:pointer;display:grid;place-items:center}
+.mist-toggle[hidden]{display:none}.mist-toggle svg{width:18px;height:18px;fill:currentColor}.mist-toggle:focus-visible{outline:3px solid #fff0ba;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.annunciation-artwork .church-mist,.mist-toggle{display:none}}
+@media(max-width:480px){.mist-toggle{width:30px;height:30px;right:8px;bottom:8px;padding:6px}.annunciation-artwork .church-mist{opacity:.25}}
