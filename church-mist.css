@@ -4,3 +4,6 @@
 .mist-toggle[hidden]{display:none}.mist-toggle svg{width:18px;height:18px;fill:currentColor}.mist-toggle:focus-visible{outline:3px solid #fff0ba;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.annunciation-artwork .church-mist,.mist-toggle{display:none}}
 @media(max-width:480px){.mist-toggle{width:30px;height:30px;right:8px;bottom:8px;padding:6px}.annunciation-artwork .church-mist{opacity:.25}}
+/* Lower ground mist, with enough contrast to see the drifting detail. */
+.annunciation-artwork .church-mist{bottom:0;height:60%;opacity:.5;mask-image:linear-gradient(to bottom,transparent 0%,#000 38%,#000 86%,transparent 100%)}
+@media(max-width:480px){.annunciation-artwork .church-mist{opacity:.45}}
