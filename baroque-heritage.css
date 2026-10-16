@@ -1,0 +1,38 @@
+/* Decorative layer only: all homepage content and artwork remain original. */
+.sunset-home{--heritage-gold:#eac66e;--heritage-ink:#031b39;background-color:var(--heritage-ink);background-image:url('heritage-damask.svg'),radial-gradient(ellipse at center,#08376a 0%,#031b39 80%)}
+.sunset-home .annunciation-hero{background:transparent;border:0}
+.sunset-home .welcome-strip{position:relative;max-width:none;padding:30px max(13.5%,calc((100vw - 1360px)/2)) 34px;background:linear-gradient(90deg,#031c3a44,#031a37ee 18%,#031a37ee 82%,#031c3a44);border-top:1px solid #c39645;border-bottom:3px double #eac66e}
+.welcome-strip:before,.welcome-strip:after{content:"";position:absolute;pointer-events:none;top:0;bottom:0;width:clamp(70px,12vw,200px);background:url('heritage-scroll.svg') left center/contain no-repeat;filter:drop-shadow(2px 3px 2px #0009)}
+.welcome-strip:before{left:0}.welcome-strip:after{right:0;transform:scaleX(-1)}
+.sunset-home .welcome-strip .hero-copy{gap:8px 40px;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.sunset-home .welcome-strip h1{font-size:clamp(30px,2.7vw,44px);text-shadow:0 2px 2px #000}
+.sunset-home .welcome-strip .hero-actions .solid-button{background:linear-gradient(#ffe6a1,#edba53);box-shadow:inset 0 0 0 1px #fff4,0 2px 4px #0007}
+.sunset-home .heritage-hub{position:relative;max-width:none;padding:35px max(12%,calc((100vw - 1400px)/2)) 30px;isolation:isolate}
+.heritage-hub:before,.heritage-hub:after{content:"";position:absolute;pointer-events:none;top:70px;bottom:15px;width:clamp(60px,11vw,170px);background:url('heritage-scroll.svg') left top/100% auto repeat-y;z-index:-1;filter:drop-shadow(2px 3px 2px #0009)}
+.heritage-hub:before{left:0}.heritage-hub:after{right:0;transform:scaleX(-1)}
+.sunset-home .section-intro{display:block;text-align:center;position:relative;margin:0 0 24px}
+.sunset-home .section-intro:before{content:"✠";position:absolute;left:50%;top:-66px;transform:translateX(-50%);font-size:44px;line-height:1;background:#052344;color:#f5d584;padding:0 16px;text-shadow:0 2px 3px #000}
+.sunset-home .section-intro h2{font-size:clamp(30px,3.2vw,49px);text-shadow:0 2px 3px #000}
+.sunset-home .section-intro h2:before,.sunset-home .section-intro h2:after{content:"❧";display:inline-block;color:#dcb354;font-size:.8em;margin:0 18px;vertical-align:middle}
+.sunset-home .section-intro h2:after{transform:scaleX(-1)}
+.sunset-home .section-intro>p{max-width:none;font-size:15px;margin:10px auto 0}
+.sunset-home .heritage-hub .photo-grid{gap:22px}
+.sunset-home .heritage-hub .album-card{position:relative;border:3px double #f0cc72;border-radius:15px;background:linear-gradient(140deg,#082b50,#02142c);box-shadow:0 0 0 2px #65451b,0 7px 16px #0008;overflow:hidden;text-align:center;transition:box-shadow .2s}
+.sunset-home .heritage-hub .album-card:before,.sunset-home .heritage-hub .album-card:after{content:"❧";position:absolute;top:0;left:4px;color:#ffda7e;font:36px Georgia,serif;line-height:1;text-shadow:1px 2px 2px #000;pointer-events:none;z-index:1}
+.sunset-home .heritage-hub .album-card:after{left:auto;right:4px;transform:scaleX(-1)}
+.sunset-home .heritage-hub .album-card img{border-bottom:3px double #eac66e}
+.sunset-home .heritage-hub .album-card>div{position:relative;padding:24px 18px 18px}
+.sunset-home .heritage-hub .album-card>div:before{content:"⚜";position:absolute;top:-24px;left:50%;transform:translateX(-50%);width:44px;height:44px;line-height:42px;border:2px solid #eac66e;border-radius:50%;background:#052344;color:#f5cf72;font-size:30px;box-shadow:0 2px 5px #0008;pointer-events:none}
+.sunset-home .heritage-hub .album-card:first-child>div:before{content:"♜";font-size:28px}
+.sunset-home .heritage-hub .album-card:last-child>div:before{content:"✧"}
+.sunset-home .heritage-hub .album-card:hover{box-shadow:0 0 0 2px #eac66e,0 8px 20px #0009}
+.sunset-home .album-card:focus-visible,.sunset-home .button:focus-visible{outline:3px solid #fff0ba;outline-offset:5px}
+.sunset-home footer{position:relative;background:linear-gradient(90deg,#031b3970,#031b39ee 25%,#031b39ee 75%,#031b3970);border-top:3px double #dcb354;padding-left:13.5%;padding-right:13.5%}
+.sunset-home footer:before{content:"✾";position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:#052344;padding:0 15px;color:#eac66e;font-size:27px;line-height:30px}
+html[data-theme=light] .sunset-home{background-color:#f8f2e2;background-image:url('heritage-damask.svg')}
+html[data-theme=light] .sunset-home .welcome-strip,html[data-theme=light] .sunset-home footer{background:#fff9eddd}
+html[data-theme=light] .sunset-home .heritage-hub .album-card{background:linear-gradient(140deg,#fffdf7,#efe6d2)}
+html[data-theme=light] .sunset-home .section-intro h2,html[data-theme=light] .sunset-home .welcome-strip h1{text-shadow:none}
+@media(max-width:1100px){.sunset-home .welcome-strip{padding-left:9%;padding-right:9%}.welcome-strip:before,.welcome-strip:after{width:8%}.sunset-home .heritage-hub{padding-left:7%;padding-right:7%}.heritage-hub:before,.heritage-hub:after{width:6%}.sunset-home .section-intro h2:before,.sunset-home .section-intro h2:after{margin:0 8px}}
+@media(max-width:900px){.sunset-home .welcome-strip .hero-copy{display:block}.sunset-home .welcome-strip{padding-top:25px;padding-bottom:35px}.sunset-home .heritage-hub{padding-top:36px;padding-bottom:32px}.sunset-home .heritage-hub .photo-grid{max-width:580px;margin:auto}.sunset-home .section-intro h2:before,.sunset-home .section-intro h2:after{display:none}.sunset-home .section-intro>p{font-size:14px}.sunset-home footer{padding-left:7%;padding-right:7%}}
+@media(max-width:480px){.sunset-home .welcome-strip{padding-left:24px;padding-right:24px}.welcome-strip:before,.welcome-strip:after{width:35px;opacity:.35;background-position:top}.sunset-home .heritage-hub{padding-left:22px;padding-right:22px}.heritage-hub:before,.heritage-hub:after{width:19px;opacity:.7}.sunset-home .section-intro h2{font-size:32px}.sunset-home .heritage-hub .album-card h3{font-size:25px}.sunset-home .heritage-hub .album-card>div{padding-left:15px;padding-right:15px}}
