@@ -42,3 +42,15 @@ html[data-theme=light] .sunset-home .section-intro h2,html[data-theme=light] .su
 .heritage-hub:before,.heritage-hub:after{width:11%;top:0;bottom:0;background-position:left -180px;background-repeat:repeat-y}
 @media(max-width:1100px){.welcome-strip:before,.welcome-strip:after{width:8%}.heritage-hub:before,.heritage-hub:after{width:6%;background-position:left top}}
 @media(max-width:480px){.welcome-strip:before,.welcome-strip:after{width:20px;opacity:.65}.heritage-hub:before,.heritage-hub:after{width:18px;opacity:.8;background-size:80px auto;background-position:left top}.heritage-hub:after{background-position:left top}}
+/* Reference-matched slim rounded frames, with decorative corners only. */
+.sunset-home{background-image:linear-gradient(#00163144,#00163144),url('blue-moroccan-damask.png');background-size:auto,620px auto}
+.sunset-home .heritage-hub .album-card{border:3px double #e8bd5c;border-radius:17px;box-shadow:0 0 0 1px #805b22,0 5px 12px #0007;overflow:visible}
+.sunset-home .heritage-hub .album-card img{border-radius:13px 13px 0 0;display:block}
+.sunset-home .heritage-hub .album-card:before,.sunset-home .heritage-hub .album-card:after{content:"";top:-3px;left:-3px;right:auto;width:38px;height:38px;background:url('gold-scroll-corner.svg') center/contain no-repeat;transform:none}
+.sunset-home .heritage-hub .album-card:after{left:auto;right:-3px;transform:scaleX(-1)}
+.sunset-home .heritage-hub .album-card>div{background-image:url('gold-scroll-corner.svg'),url('gold-scroll-corner.svg');background-repeat:no-repeat;background-size:30px 30px;background-position:left bottom,right bottom;border-radius:0 0 13px 13px;padding-bottom:24px}
+.sunset-home .heritage-hub .album-card>div:after{content:"";position:absolute;pointer-events:none;inset:0;border-radius:0 0 13px 13px;border-bottom:1px solid #f2d37c}
+.sunset-home .heritage-hub{background:transparent}
+html[data-theme=light] .sunset-home{background-image:linear-gradient(#fff9eddd,#fff9eddd),url('blue-moroccan-damask.png')}
+@media(min-width:1101px){.sunset-home .welcome-strip{padding-left:13.5%;padding-right:13.5%}.sunset-home .heritage-hub{padding-left:12%;padding-right:12%}}
+.sunset-home .heritage-hub .album-card>div{background-image:url('gold-scroll-bottom-left.svg'),url('gold-scroll-bottom-right.svg')}
